@@ -1,0 +1,11 @@
+main: main.o biblioteka.o
+	gcc main.o biblioteka.o -o main
+main.o: main.c
+	gcc -Wall -c main.c -o main.o
+biblioteka.o: biblioteka.c biblioteka.h
+	gcc -Wall -c biblioteka.c -o biblioteka.o
+	
+.Phony: clean
+
+clean:
+	rm -f program1 main.o biblioteka.o
